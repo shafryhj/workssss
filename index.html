@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한중다리（韩中桥）</title>
+  <style>
+    /* ===== 기본 리셋 / 基本重置 ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Malgun Gothic', 'Microsoft YaHei', 'Apple SD Gothic Neo', sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ===== 헤더 / 头部区域 ===== */
+    .hero {
+      background: linear-gradient(135deg, #0d47a1, #1565c0, #42a5f5);
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px 50px;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+
+    .hero .subtitle-ko {
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+      opacity: 0.95;
+    }
+
+    .hero .subtitle-zh {
+      font-size: 0.9rem;
+      opacity: 0.75;
+    }
+
+    /* ===== 섹션 공통 / 通用区块 ===== */
+    .section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.6rem;
+      color: #0d47a1;
+      margin-bottom: 4px;
+    }
+
+    .section-title-zh {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #888;
+      margin-bottom: 30px;
+    }
+
+    /* ===== 카드 / 活动卡片 ===== */
+    .cards {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      padding: 28px 24px;
+      flex: 1 1 260px;
+      max-width: 300px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+    }
+
+    .card .icon {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      color: #1565c0;
+      margin-bottom: 4px;
+    }
+
+    .card .card-zh {
+      font-size: 0.8rem;
+      color: #999;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 0.92rem;
+      color: #555;
+    }
+
+    /* ===== 표 / 日程表格 ===== */
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .schedule-table thead {
+      background: #1565c0;
+      color: #fff;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+      padding: 14px 18px;
+      text-align: center;
+    }
+
+    .schedule-table tbody tr:nth-child(even) {
+      background: #f7fafd;
+    }
+
+    .schedule-table tbody tr:hover {
+      background: #e3f2fd;
+    }
+
+    /* ===== 하단 버튼 / 底部按钮 ===== */
+    .cta {
+      text-align: center;
+      padding: 40px 20px 60px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: #0d47a1;
+      color: #fff;
+      border: none;
+      padding: 14px 36px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .cta-btn:hover {
+      background: #1565c0;
+    }
+
+    .cta-msg {
+      margin-top: 18px;
+      font-size: 1rem;
+      color: #333;
+      display: none;            /* JS로 토글 */
+      background: #e3f2fd;
+      padding: 16px 24px;
+      border-radius: 8px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.8;
+    }
+
+    /* ===== 푸터 / 页脚 ===== */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== 헤더 / 头部 ===== -->
+  <header class="hero">
+    <h1>한중다리（韩中桥）</h1>
+    <p class="subtitle-ko">한국어와 중국어를 서로 가르치며 함께 성장합니다</p>
+    <p class="subtitle-zh">互教韩语和中文，共同成长</p>
+  </header>
+
+  <!-- ===== 활동 카드 / 活动卡片 ===== -->
+  <section class="section">
+    <h2 class="section-title">동아리 활동</h2>
+    <p class="section-title-zh">社团活动</p>
+
+    <div class="cards">
+      <!-- 카드 1 -->
+      <div class="card">
+        <div class="icon">🗣️</div>
+        <h3>주간 언어교환</h3>
+        <p class="card-zh">每周语言交换</p>
+        <p>매주 한국어와 중국어를 번갈아 연습하며 실력을 키웁니다.<br>每周轮流练习韩语和中文，提升语言能力。</p>
+      </div>
+      <!-- 카드 2 -->
+      <div class="card">
+        <div class="icon">📚</div>
+        <h3>전공 과제 스터디</h3>
+        <p class="card-zh">专业作业学习小组</p>
+        <p>서로의 전공 과제를 도우며 학업 역량을 높입니다.<br>互助完成专业课作业，提高学业能力。</p>
+      </div>
+      <!-- 카드 3 -->
+      <div class="card">
+        <div class="icon">🎭</div>
+        <h3>문화 체험 행사</h3>
+        <p class="card-zh">文化体验活动</p>
+        <p>한중 문화를 직접 체험하며 교류의 폭을 넓힙니다.<br>亲身体验中韩文化，拓宽交流视野。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 일정 표 / 日程表 ===== -->
+  <section class="section">
+    <h2 class="section-title">이번 달 일정</h2>
+    <p class="section-title-zh">本月活动日程</p>
+
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>날짜<br><small style="font-weight:normal;opacity:.8">日期</small></th>
+          <th>활동<br><small style="font-weight:normal;opacity:.8">活动</small></th>
+          <th>장소<br><small style="font-weight:normal;opacity:.8">地点</small></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>11월 14일 (토)<br><small style="color:#888">11月14日（周六）</small></td>
+          <td>주간 언어교환<br><small style="color:#888">每周语言交换</small></td>
+          <td>학생회관 3층 세미나실<br><small style="color:#888">学生会馆3楼研讨室</small></td>
+        </tr>
+        <tr>
+          <td>11월 21일 (토)<br><small style="color:#888">11月21日（周六）</small></td>
+          <td>전공 과제 스터디<br><small style="color:#888">专业作业学习小组</small></td>
+          <td>중앙도서관 그룹스터디룸<br><small style="color:#888">中央图书馆小组学习室</small></td>
+        </tr>
+        <tr>
+          <td>11월 28일 (토)<br><small style="color:#888">11月28日（周六）</small></td>
+          <td>문화 체험 행사<br><small style="color:#888">文化体验活动</small></td>
+          <td>국제교류관 1층 로비<br><small style="color:#888">国际交流馆1楼大厅</small></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ===== 가입 문의 버튼 / 入会咨询按钮 ===== -->
+  <section class="cta">
+    <button class="cta-btn" onclick="toggleMsg()">가입 문의（入会咨询）</button>
+    <div class="cta-msg" id="ctaMsg">
+      가입 문의는 동아리 회장에게 전달해 주세요.<br>
+      入会咨询请联系社长。
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 한중다리（韩中桥）
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    function toggleMsg() {
+      var msg = document.getElementById('ctaMsg');
+      if (msg.style.display === 'block') {
+        msg.style.display = 'none';
+      } else {
+        msg.style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>
+
